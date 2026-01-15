@@ -574,12 +574,12 @@ body {
 .social-images {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 25px;
+  gap: 15px;
 }
 
 .social-img-card {
-  background: linear-gradient(135deg, var(--secondary-color), #2c3547);
-  aspect-ratio: 1;
+  background: linear-gradient(13deg, var(--secondary-color), #2c3547);
+  aspect-ratio: 0;
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -588,6 +588,7 @@ body {
   color: var(--primary-color);
   transition: var(--transition);
   box-shadow: var(--shadow);
+
 }
 
 .social-img-card:hover {
