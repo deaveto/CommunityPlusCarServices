@@ -213,5 +213,5 @@ window.addEventListener('scroll', () => {
 });
 
 // Console log for debugging
-console.log('%cXAPCON Website Loaded Successfully!', 'color: #F5A623; font-size: 20px; font-weight: bold;');
+console.log('%cCOMMUNITY Website Loaded Successfully!', 'color: #F5A623; font-size: 20px; font-weight: bold;');
 console.log('%cBuilt with ❤️ for XAPCON', 'color: #1A1D29; font-size: 14px;');

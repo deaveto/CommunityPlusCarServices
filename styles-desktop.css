@@ -1,3 +1,8 @@
+/* ===========================================
+   STYLES-DESKTOP.CSS
+   Estilos para pantallas grandes (min-width: 969px)
+   =========================================== */
+
 /* Reset & Base Styles */
 * {
   margin: 0;
@@ -6,7 +11,7 @@
 }
 
 :root {
-  --primary-color: #f5a623;
+  --primary-color: #018512;
   --secondary-color: #1a1d29;
   --accent-color: #4a90e2;
   --text-dark: #2c3e50;
@@ -27,7 +32,7 @@ body {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 10px;
 }
 
 /* Preloader Styles */
@@ -57,6 +62,7 @@ body {
   align-items: center;
   gap: 30px;
 }
+
 .logo-default {
   display: block;
 }
@@ -128,7 +134,7 @@ body {
   }
 }
 
-/* Navigation Styles */
+/* Navigation Styles - Desktop */
 .navbar {
   position: fixed;
   top: 0;
@@ -216,45 +222,23 @@ body {
   box-shadow: 0 4px 15px rgba(245, 166, 35, 0.3);
 }
 
+/* Hamburger - Oculto en Desktop */
 .hamburger {
   display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 5px;
 }
 
-.hamburger span {
-  width: 28px;
-  height: 3px;
-  background: var(--secondary-color);
-  transition: var(--transition);
-  border-radius: 2px;
-}
-
-.hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(8px, 8px);
-}
-
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(8px, -8px);
-}
-
-/* Hero Section */
+/* Hero Section - Desktop */
 .hero {
-  margin-top: 89px;
+  margin-top: 88px;
   position: relative;
-  height: 700px;
+  height: 600px;
   width: 100%;
   overflow: hidden;
 }
 
 .hero-slider {
   position: relative;
-  height: 100%;
+  height: 110%;
 }
 
 .hero-slide {
@@ -263,7 +247,6 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  /* Removed default gradient background so inline images take priority */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -275,16 +258,6 @@ body {
 
 .hero-slide.active {
   opacity: 1;
-}
-
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="none"/><path d="M0 0 L100 100 M100 0 L0 100" stroke="rgba(245,166,35,0.05)" stroke-width="1"/></svg>');
-  opacity: 0.5;
 }
 
 .hero-content {
@@ -347,12 +320,12 @@ body {
 }
 
 .btn-primary {
-  background: var(--primary-color);
+  background: #01a317;
   color: var(--white);
 }
 
 .btn-primary:hover {
-  background: #e09612;
+  background: #018512;
   transform: translateY(-3px);
   box-shadow: 0 8px 25px rgba(245, 166, 35, 0.4);
 }
@@ -388,26 +361,14 @@ body {
 }
 
 .indicator.active {
-  background: var(--primary-color);
+  background: #01a317;
   width: 35px;
   border-radius: 6px;
 }
 
-@media (max-width: 576px) {
-  .hero {
-    height: 500px;
-    width: 100%;
-  }
-
-  /* Ensure images scale properly on mobile */
-  .hero-slide {
-    background-position: center center;
-  }
-}
-
-/* Services Section */
+/* Services Section - Desktop */
 .services-section {
-  padding: 100px 0;
+  padding: 20px 0;
   background: var(--white);
 }
 
@@ -435,8 +396,8 @@ body {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 35px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
 }
 
 .service-card {
@@ -446,17 +407,42 @@ body {
   box-shadow: var(--shadow);
   transition: var(--transition);
   text-align: center;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.822);
+  z-index: 1;
+  transition: var(--transition);
+}
+.service-card:hover::before {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.service-card > * {
+  position: relative;
+  z-index: 2;
 }
 
 .service-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.61);
 }
 
 .service-icon {
   width: 80px;
   height: 80px;
-  background: linear-gradient(135deg, var(--primary-color), #e09612);
+  background:  #018512;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -479,7 +465,7 @@ body {
   font-size: 15px;
 }
 
-/* Process Section */
+/* Process Section - Desktop */
 .process-section {
   padding: 100px 0;
   background: var(--bg-light);
@@ -540,7 +526,7 @@ body {
   margin-top: 50px;
 }
 
-/* Social Media Section */
+/* Social Media Section - Desktop */
 .social-section {
   padding: 100px 0;
   background: var(--white);
@@ -588,7 +574,6 @@ body {
   color: var(--primary-color);
   transition: var(--transition);
   box-shadow: var(--shadow);
-
 }
 
 .social-img-card:hover {
@@ -596,7 +581,7 @@ body {
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
 }
 
-/* Web Development Section */
+/* Web Development Section - Desktop */
 .web-section {
   padding: 100px 0;
   background: var(--bg-light);
@@ -693,7 +678,7 @@ body {
   line-height: 1.5;
 }
 
-/* FAQ Section */
+/* FAQ Section - Desktop */
 .faq-section {
   padding: 100px 0;
   background: var(--white);
@@ -760,7 +745,7 @@ body {
   font-size: 15px;
 }
 
-/* CTA Section */
+/* CTA Section - Desktop */
 .cta-section {
   padding: 80px 0;
   background: linear-gradient(135deg, var(--secondary-color) 0%, #2c3547 100%);
@@ -785,7 +770,7 @@ body {
   color: rgba(255, 255, 255, 0.9);
 }
 
-/* Footer */
+/* Footer - Desktop */
 .footer {
   background: var(--secondary-color);
   color: var(--white);
@@ -892,7 +877,7 @@ body {
   font-size: 14px;
 }
 
-/* Floating Action Buttons */
+/* Floating Action Buttons - Desktop */
 .floating-buttons {
   position: fixed;
   bottom: 30px;
@@ -993,107 +978,4 @@ body {
 
 [data-aos="fade-left"].aos-animate {
   transform: translateX(0);
-}
-
-/* Responsive Design */
-@media (max-width: 968px) {
-  .nav-menu {
-    position: fixed;
-    left: -100%;
-    top: 80px;
-    flex-direction: column;
-    background: var(--white);
-    width: 100%;
-    text-align: center;
-    transition: 0.3s;
-    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-    padding: 30px 0;
-  }
-
-  .nav-menu.active {
-    left: 0;
-  }
-
-  .hamburger {
-    display: flex;
-  }
-
-  .hero-title {
-    font-size: 38px;
-  }
-
-  .hero-description {
-    font-size: 16px;
-  }
-
-  .section-title {
-    font-size: 32px;
-  }
-
-  .process-timeline {
-    flex-direction: column;
-    gap: 40px;
-  }
-
-  .process-connector {
-    width: 2px;
-    height: 40px;
-  }
-
-  .social-grid,
-  .web-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
-  .cta-content {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .cta-title {
-    font-size: 28px;
-  }
-}
-
-@media (max-width: 576px) {
-  .hero {
-    height: 500px;
-  }
-
-  .hero-title {
-    font-size: 32px;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-  }
-
-  .btn {
-    width: 100%;
-    text-align: center;
-  }
-
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .social-images {
-    grid-template-columns: 1fr;
-  }
-
-  .floating-buttons {
-    right: 20px;
-    bottom: 20px;
-  }
-
-  .fab-btn {
-    width: 50px;
-    height: 50px;
-    font-size: 20px;
-  }
 }
