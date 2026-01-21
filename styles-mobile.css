@@ -64,6 +64,10 @@ body {
 }
 
 .logo-default {
+  display: none;
+}
+
+.logo-small {
   display: block;
 }
 

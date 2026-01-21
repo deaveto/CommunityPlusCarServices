@@ -67,6 +67,10 @@ body {
   display: block;
 }
 
+.logo-small {
+  display: none;
+}
+
 .logo-loader {
   width: 200px;
   height: auto;
